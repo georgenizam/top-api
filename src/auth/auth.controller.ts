@@ -1,4 +1,4 @@
-import { Controller, HttpCode, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode } from '@nestjs/common';
 import { AuthDto } from './dto/auth.dto';
 
 @Controller('auth')

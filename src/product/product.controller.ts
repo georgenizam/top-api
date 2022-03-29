@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
 import { ProductModel } from './product.model';
-import * as Path from 'path';
 import { FindProductDto } from './dto/find-product';
 
 @Controller('product')
@@ -18,6 +17,6 @@ export class ProductController {
     async patch(@Param('id') id: string, @Body() dto: ProductModel) {}
 
     @HttpCode(200)
-    @Post('find')
+    @Post()
     async find(@Body() dto: FindProductDto) {}
 }
