@@ -29,7 +29,7 @@ describe('AppController (e2e)', () => {
         await app.init();
     });
 
-    it('/review/create (POST) - success', () => {
+    it('/review/create (POST) - success', async () => {
         return request(app.getHttpServer())
             .post('/review/create')
             .send(testDto)
@@ -40,7 +40,7 @@ describe('AppController (e2e)', () => {
             });
     });
 
-    it('/review/byProduct/:productId (GET) - success', () => {
+    it('/review/byProduct/:productId (GET) - success', async () => {
         return request(app.getHttpServer())
             .get('/review/byProduct/' + productId)
             .expect(200)
@@ -49,7 +49,7 @@ describe('AppController (e2e)', () => {
             });
     });
 
-    it('/review/byProduct/:productId (GET) - fail', () => {
+    it('/review/byProduct/:productId (GET) - fail', async () => {
         return request(app.getHttpServer())
             .get('/review/byProduct/' + new Types.ObjectId().toHexString())
             .expect(200)
